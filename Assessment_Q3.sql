@@ -53,7 +53,7 @@ SELECT
 FROM
     last_transactions
 WHERE
-    last_transaction_date IS NULL 
+    last_transaction_date IS NOT NULL 
     OR last_transaction_date <= DATE_SUB(CURRENT_DATE, INTERVAL 365 DAY)
 ORDER BY
     inactivity_days DESC;
