@@ -89,7 +89,7 @@ Estimate customer lifetime value based on account tenure and total transaction v
   The `name` field in `users_customuser` was consistently null. To handle this, the `first_name` and `last_name` columns were concatenated in all relevant outputs to form a usable full name.
 
 - **Identifying Active Accounts:**  
-  Determining what qualified as an “active” account required interpreting implicit business logic. We narrowed the scope to only savings and investment plans using `is_regular_savings` and `is_a_fund` flags respectively.
+  Determining what qualified as an “active” account required interpreting implicit business logic. We narrowed the scope to only savings and investment plans using `is_regular_savings` and `is_a_fund` flags, respectively and also where `confirmed_amount` is not "Null".
 
 - **Data in Kobo:**  
   All monetary amounts were stored in kobo. For human readability, all calculations involving money were converted to naira (by dividing by 100), especially for metrics like total deposit and CLV.
